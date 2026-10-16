@@ -3,4 +3,4 @@ function getTasks(res,req){
     res.send(getAllTasks())
 }
 
-module.exports = { getTasks }
+module.exports = { getTasks } 

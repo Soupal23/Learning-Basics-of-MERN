@@ -125,8 +125,7 @@
 
 const express = require("express")
 const app = express()
-const {tasksRouter}=require("../backend/routes/tasksRouter")
+const tasksRouter=require("./routes/tasksRouter")
+
+app.use("/api", tasksRouter)
 app.listen(3000)
-app.use("/api", tasksRouter=>{
-    next()
-})

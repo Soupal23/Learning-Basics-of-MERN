@@ -4,4 +4,4 @@ function getAllTasks(){
     return tasks
 }
 
-module.exports = {getAllTasks}
+module.exports = { getAllTasks }

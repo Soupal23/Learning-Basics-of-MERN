@@ -1,5 +1,5 @@
-const getAllTasks = require("../service/tasksService")
-function getTasks(res,req){
+const { getAllTasks } = require("../service/tasksService")
+function getTasks(req,res){
     res.send(getAllTasks())
 }
 

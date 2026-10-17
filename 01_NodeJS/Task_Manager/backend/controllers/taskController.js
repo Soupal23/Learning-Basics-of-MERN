@@ -1,6 +1,12 @@
-const { getAllTasks } = require("../service/tasksService")
+const { getAllTasks,addTask } = require(
+    "../service/tasksService")
+
 function getTasks(req,res){
     res.send(getAllTasks())
 }
 
-module.exports = { getTasks } 
+function postTasks(req,res){
+    res.send(addTask(req.body))
+}
+
+module.exports = { getTasks, postTasks } 

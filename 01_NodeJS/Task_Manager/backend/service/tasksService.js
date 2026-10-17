@@ -4,4 +4,10 @@ function getAllTasks(){
     return tasks
 }
 
-module.exports = { getAllTasks }
+function addTask(task){
+    tasks.push(task)
+    return task
+}
+
+module.exports = { getAllTasks,
+     addTask }

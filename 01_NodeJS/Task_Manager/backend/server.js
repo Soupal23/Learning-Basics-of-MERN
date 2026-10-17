@@ -125,7 +125,9 @@
 
 const express = require("express")
 const app = express()
-const tasksRouter=require("./routes/tasksRouter")
 
+const tasksRouter=require(
+    "./routes/tasksRouter")
+app.use(express.json())
 app.use("/api", tasksRouter)
 app.listen(3000)

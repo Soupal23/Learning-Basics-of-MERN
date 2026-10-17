@@ -1,7 +1,7 @@
-const tasks = []
+const { Task } = require("../models/tasksmodel")
 
 function getAllTasks(){
-    return tasks
+    return Task.find()
 }
 
 function addTask(task){
@@ -9,5 +9,4 @@ function addTask(task){
     return task
 }
 
-module.exports = { getAllTasks,
-     addTask }
+module.exports = { getAllTasks, addTask }

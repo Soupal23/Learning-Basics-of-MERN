@@ -1,8 +1,9 @@
 const { getAllTasks,addTask } = require(
     "../service/tasksService")
 
-function getTasks(req,res){
-    res.send(getAllTasks())
+async function getTasks(req,res){
+    const tasks = await getAllTasks()
+    res.send(tasks)
 }
 
 function postTasks(req,res){

@@ -125,9 +125,15 @@
 
 const express = require("express")
 const app = express()
-require("dotenv").config
-const tasksRouter=require(
-    "./routes/tasksRouter")
+
+require("dotenv").config()
+const { connectDB } = require("./config/db")
+const tasksRouter=require("./routes/tasksRouter")
+const { Task } = require("./models/tasksmodel")
 app.use(express.json())
+
+connectDB()
 app.use("/api", tasksRouter)
-app.listen(3000)
+app.listen(3000, ()=>{
+    console.log("Server listening on port 3000")
+})

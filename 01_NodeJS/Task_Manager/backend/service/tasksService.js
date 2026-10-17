@@ -8,4 +8,8 @@ async function addTask(task){
     return await Task.create(task)
 }
 
-module.exports = { getAllTasks, addTask }
+async function removeTask(id){
+    return await Task.findOneAndDelete({ "id" : id.id })
+}
+
+module.exports = { getAllTasks, addTask, removeTask }

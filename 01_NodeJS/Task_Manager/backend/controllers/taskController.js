@@ -1,4 +1,4 @@
-const { getAllTasks,addTask } = require(
+const { getAllTasks,addTask , removeTask } = require(
     "../service/tasksService")
 
 async function getTasks(req,res){
@@ -16,4 +16,17 @@ async function postTasks(req,res){
     }
 }
 
-module.exports = { getTasks, postTasks } 
+async function deleteTasks(req,res){
+    try{
+        const result = await removeTask(req.body)
+        if(!result){
+            res.status(404).send("No such task")
+            return
+        }
+        res.status(200).send("Task Deleted")
+    } catch(error){
+        res.status(500).send("Not deleted")
+    }
+}
+
+module.exports = { getTasks, postTasks, deleteTasks } 

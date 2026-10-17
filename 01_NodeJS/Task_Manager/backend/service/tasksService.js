@@ -1,12 +1,11 @@
 const { Task } = require("../models/tasksmodel")
 
-function getAllTasks(){
-    return Task.find()
+async function getAllTasks(){
+    return await Task.find()
 }
 
-function addTask(task){
-    tasks.push(task)
-    return task
+async function addTask(task){
+    return await Task.create(task)
 }
 
 module.exports = { getAllTasks, addTask }

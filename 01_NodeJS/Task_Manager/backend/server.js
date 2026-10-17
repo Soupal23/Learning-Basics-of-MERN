@@ -137,3 +137,5 @@ app.use("/api", tasksRouter)
 app.listen(3000, ()=>{
     console.log("Server listening on port 3000")
 })
+
+//find out why app.use("/api ") goes before port listening

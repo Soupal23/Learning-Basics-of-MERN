@@ -1,2 +1,20 @@
-There can be a router inside a router
-Allways enable app.use(express.json()) to read json files in server else json becomes undefined in middleware
+LEARNINGS :
+
+1.There can be a router inside a router
+
+2.Allways enable app.use(express.json()) to read json files in server else json becomes undefined in middleware
+
+3.consider the foloowing
+        app.use("/api", tasksRouter)
+        app.listen(3000, ()=>{
+            console.log("Server listening on port 3000")
+        })
+
+why app.use(...) before app.listen(3000, ...) ??
+
+ans: So first we have to configure the server, that is set the rules for the server, 
+that does that say a request comes in having path /api,
+then it would use Task Router. Say if we had started listening before and the request came in, 
+the code still might have worked because the rest of the JavaScript is running, 
+but the request would have been routed wrongly (Not necessarily. If the request arrives after app.use("/api", tasksRouter) 
+has executed, it will be routed correctly.). So first laying down the rules and then we start listening that is our server.

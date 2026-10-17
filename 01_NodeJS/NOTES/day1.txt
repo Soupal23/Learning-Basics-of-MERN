@@ -1,1 +1,2 @@
 There can be a router inside a router
+Allways enable app.use(express.json()) to read json files in server else json becomes undefined in middleware
